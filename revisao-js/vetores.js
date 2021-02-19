@@ -81,7 +81,7 @@ for(let i = 0; i < frutas.length; i++)//++ anda uma casa para a frente
 console.log('***')
 console.log('2) For Tradicional no caminho inverso')
 //For tradicional no caminho inverso
-//a) O contador inicia-se em linght - 1
+//a) O contador inicia-se em lenght - 1
 //b) A condição é contador MAIOR ou IGUAL a zero (0 - primeiro elemento)
 for (let i = frutas.length - 1; i>=0; i--)//-- anda uma casa para trás
 {
