@@ -9,7 +9,7 @@ let vazio2 = new Object() //Forma "Tradicional"
 let pessoa = 
 {
     //Os dados são armazenados no formato?
-    //propriedade : valor  Oi
+    //propriedade : valor  
     //atributo : valor
     nome:'Orkutilson de Oliveira', 
     sexo: 'M',
@@ -31,7 +31,7 @@ console.log(pessoa.ocupacao)
 console.log(pessoa['cidade de origem'])
 console.log(pessoa.gostos)
 
-//A sintaxe dos colchetes SEMPRE funciona, mesmo se o nome da propriedade for uma única palavra sem acente
+//A sintaxe dos colchetes SEMPRE funciona, mesmo se o nome da propriedade for uma única palavra sem acento
 console.log(pessoa['nome'])
 
 //Outra consequência da sintaxe dos colchetes é a possibilidade de usar nomes de propriedades que estão dentro de variáveis
@@ -60,3 +60,25 @@ console.table(carro)
 delete carro.ano
 
 console.table(carro)
+console.log('-----------------------------------------')
+
+//Exibindo todas as propriedades de um objeto
+//for..in determina quais as propriedades de um objeto e coloca cada uma delas em ima variável informada pelos usuário(p, no caso) a cad aiteração do loop
+for (let p in carro)
+{
+    console.log(p)
+}
+
+console.log('-----------------------------------------')
+
+for (let p in pessoa)
+{
+    console.log(p)
+}
+
+console.log('-----------------------------------------')
+//for..in para listar propriedades e valores deum objeto
+for(let atrib in pessoa)
+{
+    console.log(atrib + ' -> ' + pessoa[atrib])
+}

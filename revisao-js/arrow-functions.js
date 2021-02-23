@@ -40,7 +40,7 @@ function megasena()
     //Math.random() -> retorna um número entre 0 (inclusive) e 1 (exclusive)
     // * 60 -> ajusta afaixa de valores para entre 0 e 59
     // + 1 -> Ajusta a faixa de valores para entre 1 e 60
-    // Math.floor -> arredondar para o menor inteiro (tirar as casas decimais)
+    // Math.floor() -> arredondar para o menor inteiro (tirar as casas decimais)
     return Math.floor(Math.random()*60 + 1)
 }
 console.log(megasena(), megasena(), megasena(), megasena(), megasena(), megasena())
@@ -64,7 +64,7 @@ function somaVet(vet)
 }
 
 console.log(somaVet([12, 42, -11, 20, 9, 16]))
-//Quando a função tem mais de um alinha de código, na arrow function equivalenteretornam as chaves e também a palavra return, caso ela retorne valor
+//Quando a função tem mais de um alinha de código, na arrow function equivalente retornam as chaves e também a palavra return, caso ela retorne valor
 const somaVet2 = vet => 
 {
     let soma = 0
