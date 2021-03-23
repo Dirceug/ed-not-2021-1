@@ -5,6 +5,8 @@ No precesso de ordenação, esse algoritmo "desmonta" o vetor original contendo 
 Em 
 */
 
+lets comps, divisoes, juncoes
+
 function mergeSort(vetor)
 {
 
@@ -22,7 +24,8 @@ function mergeSort(vetor)
             {
                 vetRes.push(vetDir[pDir])
                 pDir++
-            }
+            }~
+            comps++
         }
         //Descobrir de qual lado sobrou
         let sobra 
@@ -42,13 +45,16 @@ function mergeSort(vetor)
         let vetEsq = vetor.slice(0, meio)
         //Caso o segundo parâmetro do slice() seja omitido, serão cpiados os elementos desde a posição informada até a posição final.
         let vetDir = vetor.slice(meio)
-        console.log({vetEsq, vetDir})
+        divisoes++
+
+        //console.log({vetEsq, vetDir})
         // Chamadas recursivas a função.
         vetEsq = mergeSort(vetEsq)
         vetDir = mergeSort(vetDir)
 
         const vetFinal = mesclar(vetEsq, vetDir)
-        console.log({vetFinal})
+        juncoes++
+        //console.log({vetFinal})
     }
     return vetor  // Vetor de 1 elemento, não modificado.
 }
@@ -61,3 +67,4 @@ function mergeSort(vetor)
 let nums = [7, 4, 9, 0, 6, 1, 8, 2, 5, 3]
 let numsOrd = mergeSort(nums)
 console.log({numsOrd})
+console.log({comps, divisoes, juncoes})

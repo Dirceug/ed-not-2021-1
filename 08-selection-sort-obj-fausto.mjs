@@ -35,6 +35,7 @@ function selectionSort(vetor, fnComp) {
 // Função de comparação retorna true caso o PRIMEIRO objeto seja MAIOR que o SEGUNDO
 
 import { candidatos } from './includes/candidatos-2018.mjs'
+/git/import { nomes } from './includes/100-mil-nomes.mjs'
 
 //console.log('ANTES:', candidatos)
 console.time('Ordenando candidatos...')
