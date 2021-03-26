@@ -40,7 +40,7 @@ import { candidatos } from './includes/candidatos-2018.mjs'
 console.time('Ordenando Candidatos...')
 selectionSort(candidatos, (obj1, obj2) => obj1.NH_URNA_CANDIDATO > obj2.NH_URNA_CANDIDATO)
 console.timeEnd('Ordenando Candidatos...')
-console.log('Depois: ', candidatos)
+//console.log('Depois: ', candidatos)
 console.log({trocas, pass, comps})
 
 
