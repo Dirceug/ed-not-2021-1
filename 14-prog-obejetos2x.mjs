@@ -18,17 +18,11 @@ class FormaGeometrica {
     //Um método especial é o constructor(). Ele é chamado toda vez que se vai criar um novo objeto a partir da classe. No constructor(), podem ser feitas validações que, ao falhar, geram um Error. A Existência de um ou mais Errors impede que o objeto seja criado.
     constructor(base, altura, tipo)
     {
-        //base deve ser numérica e seu valor maior que ZERO
-        if(isNaN(base) || base <= 0)
-            throw new Error('A base deve ser numérica e seu valor maior que zero.')
+        //Invocar os setters das propriedades. As validações serão feitas por lá.
+        this.base = base
+        this.altura = altura
+        this.tipo = tipo
 
-        //Altura deve ser numérica e seu valor maior que ZERO
-        if(isNaN(altura) || base <= 0)
-            throw new Error('A altura deve ser numérica e seu valor maior de zero.')
-
-        //if(tipo !== 'Q' && tipo !== 'T' && tipo !== 'E')
-        if(!['Q', 'T', 'E'].includes(tipo))
-            throw new Error('O Tipo deve ser Q, T, ou E.')
 
         //Se chegamos até aqui, podemos prosseguir com a criação do objeto.
 
@@ -72,9 +66,25 @@ class FormaGeometrica {
        return this.#tipo
    }
 
+   /************************************************************************************
+    * PROPRIEDADE CALCULADA: NÃO RETORNA UM VALOR ARMAZENADO EM UM ATRIBUTO PRIVADO. eM VEZ DISSO, CALCULA "AO VIVO" UM VALOR E O RETORNA
+    */
+  get area()
+{
+    switch(this.tipo)
+    {
+        case 'Q':
+            return this.base * this.altura
+        case 'T':
+            return this.base * this.altura / 2
+        default:
+            return (this.base / 2) * (this.altura / 2) * Math.PI
+    }
+}
    /*
     setters: permitem que p mundo externo possa alterar o valor de atributos privados, caso o novo valor esteja de acordo com regras de negócio.
    */
+
 
    set base(valor)
    {//base deve ser numérica e seu valor maior que zero
@@ -148,5 +158,9 @@ console.log({
     tipo: forma1.tipo       //Acesso ao getter tipo
 })
 
-
+//Funções, dentro de classes, passam a ser denominadas Métodos e perdem a palavra function
 //forma1.base = 'çwjhfsad'    // Não funcionar
+
+console.log('calcularArea() de forma1 (método):', forma1.calcularArea())
+console.log('area de forma1 (propriedade calculada):', forma1.area)
+
