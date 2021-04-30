@@ -12,7 +12,7 @@ console.log(pilha)
 //Inserindo alguns caractes no MEIO da pilha(PROIBIDO)
 pilha.splice(16, 0, 'b', 'a', 't', 'a', 't', 'a')
 
-console.log(pilha)
+//console.log(pilha)
 
 let textoRev = ''
 
