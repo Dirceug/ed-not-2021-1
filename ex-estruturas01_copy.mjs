@@ -5,10 +5,11 @@
     Data de entrega: 31/05, até 20h50, valendo nota de participação
 */
 
-import { Deque } from './lib/Deque.mjs'
+import { Stack } from './lib/Stack.mjs'
 
-    let armazenadorRestos = new Deque()
+    let armazenadorRestos = new Stack()
     let resultBinario = "" 
+    let count = 0
     console.log(armazenadorRestos.print())
 
 function decimalparabinario(decimal)
@@ -18,7 +19,7 @@ function decimalparabinario(decimal)
 
     if(decimal == 0 )
     {
-        armazenadorRestos.insertBack()
+        armazenadorRestos.push()
         console.log({rest, decimal})
         console.log(armazenadorRestos.print())
     }
@@ -26,32 +27,29 @@ function decimalparabinario(decimal)
     while (decimal > 0 )
     {
         rest = Math.floor(decimal % 2)
-        armazenadorRestos.insertBack(rest)
+        armazenadorRestos.push(rest)
         decimal = Math.floor(decimal / 2)
+        count ++
         console.log({rest, decimal})
+        console.log(count)
         console.log(armazenadorRestos.print())
+        
     }
 
-        if(decimal == 0 )
-    {
-        armazenadorRestos.insertBack(0)
-        console.log({rest, decimal})
-        console.log(armazenadorRestos.print())
-    }
-
-
+ 
     console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
 
-    console.log(armazenadorRestos.peekBack())
+    console.log(armazenadorRestos.peek())
 
-   while(!armazenadorRestos.empty)
+   for(let i = count; i > 0; i--)
    {
-       resultBinario = armazenadorRestos.removeBack().toString()
+       resultBinario = armazenadorRestos.pop()
        resultBinario += resultBinario
+       console.log('X')
    }
 
-    console.log('  ')
+    console.log('')
 return resultBinario
 }
-
+console.log("x")
 console.log(decimalparabinario(200))
