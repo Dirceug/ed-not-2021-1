@@ -16,18 +16,39 @@
 
 import { LinkedList } from './lib/LinkedList.mjs'
 
-let node = new Node()
 let lista = new LinkedList()
 console.log(lista.print())
 
+
 function insertVal (val)
 {
-    while(!lista.empty)
+    let count = lista.count
+    if(count === 0) 
     {
-
+        lista.insert(0, val)
+    }
+    else
+    {
+        for(let i = 0; i < count; i++)
+        {
+            if(count.data === val) lista.insert(i, val)
+        }
+        return -1
     }
     
 }
+
+insertVal(13)
+console.log(lista.print())
+
+insertVal(25)
+console.log(lista.print())
+
+insertVal(33)
+console.log(lista.print())
+
+insertVal(11)
+console.log(lista.print())
 
 /*
 insert(pos, val)
