@@ -5,53 +5,41 @@
     Data de entrega: 31/05, até 20h50, valendo nota de participação
 */
 
-import { Deque } from './lib/Deque.mjs'
+import { Stack } from './lib/Stack.mjs'
 
-    let armazenadorRestos = new Deque()
+    let armazenadorRestos = new Stack()
     let resultBinario = "" 
-    console.log(armazenadorRestos.print())
+    let binario = " "
+    let count = 0
+    //console.log(armazenadorRestos.print())
 
 function decimalparabinario(decimal)
 {
-    let rest
-    console.log({rest, armazenadorRestos, resultBinario, decimal})
-
+    let rest //Variável que receberá o resto das divisões
+    //1º Caso, se o número digitado for igual a ZERO
     if(decimal == 0 )
     {
-        armazenadorRestos.insertBack()
-        console.log({rest, decimal})
-        console.log(armazenadorRestos.print())
+        binario = '0'
     }
 
+    //2º Caso, se ´número inserido for maior que ZERO
     while (decimal > 0 )
     {
-        rest = Math.floor(decimal % 2)
-        armazenadorRestos.insertBack(rest)
-        decimal = Math.floor(decimal / 2)
-        console.log({rest, decimal})
-        console.log(armazenadorRestos.print())
+        rest = decimal % 2      //Variável de resto recebe a sobra da divisão
+        armazenadorRestos.push(rest)    //Insere a sobra da divisão no vetor
+        decimal = Math.floor(decimal / 2)   //Divide p númerop por 2
+        count ++        //Acrescenta mais um no contador.
     }
 
-        if(decimal == 0 )
+    for(let i = count; i > 0; i--) //Enquanto o houver
     {
-        armazenadorRestos.insertBack(0)
-        console.log({rest, decimal})
-        console.log(armazenadorRestos.print())
+        resultBinario = armazenadorRestos.pop()
+        binario += resultBinario.toString()
+
     }
 
-
-    console.log('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
-
-    console.log(armazenadorRestos.peekBack())
-
-   while(!armazenadorRestos.empty)
-   {
-       resultBinario = armazenadorRestos.removeBack().toString()
-       resultBinario += resultBinario
-   }
-
-    console.log('  ')
-return resultBinario
+return binario
 }
 
-console.log(decimalparabinario(200))
+console.log(decimalparabinario(0))
+//console.log(binario)
