@@ -41,5 +41,5 @@ function decimalparabinario(decimal)
 return binario //Retorna o valor concatenado
 }
 
-console.log(decimalparabinario(0))
+console.log(decimalparabinario(255))
 //console.log(binario)

@@ -93,11 +93,11 @@ console.log(lista.print())
 console.log("4º Número")
 insertVal(3)
 console.log(lista.print())
-/*
+
 console.log("5º Número")
 insertVal(11)
 console.log(lista.print())
-
+/*
 console.log("6º Número")
 insertVal(44)
 console.log(lista.print())
