@@ -6,40 +6,59 @@
 
 import { Deque } from './lib/Deque.mjs'
 
-const palindromo = "subi no onibus"
+//const palindromo = "subi no onibus"
 
 const deque = new Deque()
 
 
-for(let i = 0; i < palindromo.length ; i++)
+
+function palindromoTeste(val)
 {
-    deque.insertBack(palindromo.charAt(i))
-}
+    const palindromo = val
+    let palindromo2 = palindromo.toUpperCase().trim()
+    let omordnilap = ''
+    let omordnilap2 = ''
+    let palindromo3 = ''
+    let casual
+    let result = true
 
-console.log(deque)
-console.log(deque.print())
-
-let omordnilap = ""
-
-while(! deque.empty)
-{
-    omordnilap += deque.removeBack()
-}
-
-console.log({palindromo})
-console.log({omordnilap})
-
-
-/*
-let resultado
-if(palindromo == omordnilap)
+    for(let i = 0; i < palindromo2.length ; i++)
     {
-        resultado = true
+        deque.insertBack(palindromo2.charAt(i))
+        casual = palindromo2.charAt(i)
+        if(casual != " ")
+        {
+            palindromo3 += casual
+        }     
+        
+        //console.log(palindromo3)        
+    }
+
+
+    while(! deque.empty)
+    {
+        omordnilap = deque.removeBack().toUpperCase()
+        if(omordnilap != " ")
+        {
+            omordnilap2 += omordnilap
+        }
+
+        //console.log(omordnilap2)
+    }
+
+    if(palindromo3 == omordnilap2)
+    {
+        console.log(`A expressão "${palindromo}" é um palindromo!`)
+        result = true
     }
     else
     {
-        resultado = false
+        console.log(`A expressão "${palindromo}" não é um palindromo!`)
+        result = false
     }
+}
 
-console.log(resultado)
-*/
+//console.log({palindromo})
+//console.log({omordnilap})
+console.log(palindromoTeste("1001"))
+
