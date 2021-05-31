@@ -31,14 +31,14 @@ function decimalparabinario(decimal)
         count ++        //Acrescenta mais um no contador.
     }
 
-    for(let i = count; i > 0; i--) //Enquanto o houver
+    for(let i = count; i > 0; i--) //Enquanto o houver elementos no vetor faça:
     {
-        resultBinario = armazenadorRestos.pop()
-        binario += resultBinario.toString()
+        resultBinario = armazenadorRestos.pop() //resultBinario recebe o ultimo elemento
+        binario += resultBinario.toString() //Binário concatena as strings
 
     }
 
-return binario
+return binario //Retorna o valor concatenado
 }
 
 console.log(decimalparabinario(0))
